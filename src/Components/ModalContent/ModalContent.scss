@@ -1,0 +1,40 @@
+.modalTools{
+    div{
+        display: flex;
+        width: calc(100vh );
+    }
+    &__color{
+        width: 25px;
+        height: 25px;
+        button{
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: none;
+        }
+    
+        .transparent{
+            border: 1px solid black;
+            background-color: transparent;
+        }
+        .red{
+            background-color: #E01E02;
+        }
+        .blue{
+            background-color: #02A4EF;
+        }
+        .violet{
+            background-color: #B939FF;
+        }
+        .orange{
+            background-color: #FF8000;
+        }
+        .green{
+            background-color: #388B43;
+        }
+    }
+}
+
+.vkuiTabbar{
+    z-index: 1;
+}

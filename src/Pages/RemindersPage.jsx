@@ -4,6 +4,7 @@ import React, { useRef, useState } from 'react'
 import NavBar from '../Components/NavBar/NavBar'
 import HeaderPanel from '../Components/PanelHeader/PanelHeader'
 import RemindersContent from "../Components/RemindersContent/RemindersContent";
+import ModalContent from '../Components/ModalContent/ModalContent';
 function RemindersPage({ activePanel, setActivePanel }) {
     const valueInputRef = useRef(null);
     const [activeModal, setActiveModal] = React.useState(false);
@@ -28,32 +29,8 @@ function RemindersPage({ activePanel, setActivePanel }) {
                 <ModalPage
                     id="modal_active"
                     onClose={() => setActiveModal(null)}
-                    settlingHeight={100}
                 >
-                    <Tabs>
-                        <TabsItem style={{
-                                width:"20%",
-                                padding:"0"
-                            }}>
-                            <Icon28AddOutline style={{ color: "#ED4344" }} />
-                        </TabsItem>
-                        <Div>
-                            <input type="text" ref={valueInputRef} style={{
-                                border:"1px solid #A9A9A9",
-                                // width:"100%",
-                                borderRadius:"20px",
-                                padding:"5px 10px"
-                            
-                            }}/>
-                        </Div>
-                        <TabsItem style={{
-                                width:"20%",
-                                padding:"0"
-
-                            }}>
-                            <Icon28DoneOutline style={{ color: "#ED4344" }} />
-                        </TabsItem>
-                    </Tabs>
+                    <ModalContent valueInputRef={valueInputRef}/>
                 </ModalPage>
             </ModalRoot>
             <NavBar activePanel={"modal_active"} setActivePanel={setActivePanel} />
